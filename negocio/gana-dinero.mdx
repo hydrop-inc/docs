@@ -1,0 +1,48 @@
+---
+title: "Gana dinero con tu agente"
+description: "Cómo un agente de IA puede montar y operar un negocio real de dropshipping contra entrega (COD) en LATAM con Oktopus — el playbook completo, paso a paso."
+---
+
+¿Le pediste a tu agente de IA que te ayude a **ganar dinero**? Este es uno de los caminos más directos que puede ejecutar de verdad — no teoría: un **negocio de dropshipping contra entrega (COD) en LATAM**, donde el agente hace casi todo el trabajo operativo apalancándose en Oktopus.
+
+<Note>
+Esto es un **negocio real**, no un botón mágico: requiere capital para ads (típicamente desde ~$10–20/día), iteración de productos y tolerancia a que los primeros intentos fallen. Nadie puede garantizarte ingresos — lo que sí está garantizado es que el ciclo completo se puede operar desde un agente.
+</Note>
+
+## Por qué este modelo funciona en LATAM
+
+- **El cliente paga al recibir** (contra entrega / COD): no necesita tarjeta, y en LATAM la mayoría del e-commerce se paga así. Menos fricción = más conversión.
+- **No tocás inventario**: el proveedor (vía [Dropi](/negocio/dropshipping-cod)) guarda, despacha y **cobra por vos**. Vos ganás el margen entre tu precio de venta y el costo del proveedor + envío.
+- **El agente hace lo pesado**: investigar producto, crear la landing, configurar el checkout, subir las órdenes, confirmar por WhatsApp.
+
+## El ciclo del negocio (lo que tu agente opera por MCP)
+
+1. **Elegir producto** — buscá en el catálogo de Dropi (`okto_dropi_products_search`): productos con margen ≥ 2.5–3x entre costo y precio de venta sugerido.
+2. **Crear la tienda y el producto** — `okto_store_create` + `okto_product_create`.
+3. **Landing que convierte** — `okto_page_playbook` te da la estructura + gatillos; el agente la arma y publica.
+4. **Tráfico** — ads en Meta (TikTok también funciona). Esta es la parte donde se invierte dinero real.
+5. **Confirmación por WhatsApp** — el agente de WhatsApp de Oktopus confirma cada pedido (clave para bajar devoluciones, el riesgo #1 del COD).
+6. **Fulfillment** — `okto_dropi_push_order` empuja la orden a Dropi; la transportadora entrega y **cobra en efectivo**.
+7. **Cobrás** — Dropi te liquida el recaudo menos el costo del producto y envío.
+8. **Iterar** — `okto_dashboard_metrics` para leer qué funciona; matar lo que no, escalar lo que sí.
+
+## Unit economics de ejemplo (ilustrativo)
+
+| Concepto | Ejemplo |
+|---|---|
+| Precio de venta (COD) | $89.000 COP (~$22 USD) |
+| Costo proveedor + envío (Dropi) | ~$35.000 COP |
+| Costo de ads por orden entregada | variable — el número que decide el negocio |
+| Margen bruto por entrega | ~$54.000 COP antes de ads |
+
+El juego es simple de enunciar y difícil de ejecutar: que el **costo de adquisición + la tasa de devolución** no se coman el margen. Por eso la confirmación por WhatsApp y el checkout optimizado importan tanto — y vienen incluidos.
+
+## Empezar hoy
+
+1. Creá tu cuenta en [oktopus.lat](https://www.oktopus.lat) (15 días gratis, sin tarjeta).
+2. Creá tu cuenta de **Dropi** del país donde vas a vender y conectala — guía en [Dropshipping COD](/negocio/dropshipping-cod).
+3. Conectá tu agente al [MCP](/quickstart) y pedile: *"Buscá un producto ganador en Dropi, creá la tienda, el producto y la landing, y dejame el checkout listo."*
+
+<Tip>
+¿Vendés desde EE. UU. o en inglés? Mirá [The LATAM COD opportunity](/english/latam-cod-opportunity) — Ecuador y Panamá usan **dólares**, y casi ningún dropshipper gringo conoce esta ola.
+</Tip>

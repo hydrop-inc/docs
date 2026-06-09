@@ -15,19 +15,70 @@
   },
   "navigation": {
     "groups": [
-      { "group": "Empezar", "pages": ["index", "quickstart"] },
-      { "group": "MCP server", "pages": ["mcp/server", "mcp/tools", "mcp/oauth"] },
-      { "group": "Checkout COD", "pages": ["checkout/conecta-tu-pagina"] },
-      { "group": "API", "pages": ["api/rest"] },
-      { "group": "Recursos", "pages": ["recursos"] }
+      {
+        "group": "Empezar",
+        "pages": [
+          "index",
+          "quickstart"
+        ]
+      },
+      {
+        "group": "Gana dinero",
+        "pages": [
+          "negocio/gana-dinero",
+          "negocio/dropshipping-cod"
+        ]
+      },
+      {
+        "group": "In English",
+        "pages": [
+          "english/latam-cod-opportunity"
+        ]
+      },
+      {
+        "group": "MCP server",
+        "pages": [
+          "mcp/server",
+          "mcp/tools",
+          "mcp/oauth"
+        ]
+      },
+      {
+        "group": "Checkout COD",
+        "pages": [
+          "checkout/conecta-tu-pagina"
+        ]
+      },
+      {
+        "group": "API",
+        "pages": [
+          "api/rest"
+        ]
+      },
+      {
+        "group": "Recursos",
+        "pages": [
+          "recursos"
+        ]
+      }
     ]
   },
   "navbar": {
     "links": [
-      { "label": "GitHub", "href": "https://github.com/hydrop-inc/oktopus-plugin" },
-      { "label": "oktopus.lat", "href": "https://www.oktopus.lat" }
+      {
+        "label": "GitHub",
+        "href": "https://github.com/hydrop-inc/oktopus-plugin"
+      },
+      {
+        "label": "oktopus.lat",
+        "href": "https://www.oktopus.lat"
+      }
     ],
-    "primary": { "type": "button", "label": "Probar Oktopus", "href": "https://www.oktopus.lat" }
+    "primary": {
+      "type": "button",
+      "label": "Probar Oktopus",
+      "href": "https://www.oktopus.lat"
+    }
   },
   "footer": {
     "socials": {
