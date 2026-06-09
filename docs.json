@@ -1,72 +1,38 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Oktopus Docs",
+  "description": "Documentación de Oktopus — el riel de pago contra entrega (COD) para LATAM, agent-native.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#7c3aed",
+    "light": "#a78bfa",
+    "dark": "#5b21b6"
   },
   "favicon": "/favicon.svg",
-  "navigation": {
-    "pages": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
-  },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo.png",
+    "dark": "/logo.png"
+  },
+  "navigation": {
+    "groups": [
+      { "group": "Empezar", "pages": ["index", "quickstart"] },
+      { "group": "MCP server", "pages": ["mcp/server", "mcp/tools", "mcp/oauth"] },
+      { "group": "Checkout COD", "pages": ["checkout/conecta-tu-pagina"] },
+      { "group": "API", "pages": ["api/rest"] },
+      { "group": "Recursos", "pages": ["recursos"] }
+    ]
   },
   "navbar": {
     "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
+      { "label": "GitHub", "href": "https://github.com/hydrop-inc/oktopus-plugin" },
+      { "label": "oktopus.lat", "href": "https://www.oktopus.lat" }
     ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
-    }
-  },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
+    "primary": { "type": "button", "label": "Probar Oktopus", "href": "https://www.oktopus.lat" }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "github": "https://github.com/hydrop-inc",
+      "website": "https://www.oktopus.lat"
     }
   }
 }

@@ -1,47 +1,66 @@
 ---
-title: "Quickstart"
-description: "Begin with a guide on the fastest path to a successful outcome"
+title: "Quickstart — conectar el MCP"
+description: "Conectá el MCP server de Oktopus a Claude Code, Claude Desktop o Cursor en 2 minutos, con API key o OAuth."
 ---
 
-Describe how someone begins using your product. What is the first thing they need to do? Are there any prerequisites?
+El endpoint del MCP server (Streamable HTTP) es:
 
-A quickstart should take someone from zero to using your product. They'll get a quick win and a sense of what they can accomplish.
+```text
+https://www.oktopus.lat/api/mcp
+```
 
-## Prerequisites
+## 1. Conseguí tu API key
 
-Before you begin, you must have:
-
-- Requirement one (for example, Node.js 18+, a free account, an API key)
-- Requirement two (for example, a compatible device, a compatible browser, a compatible operating system)
-
-## Get started
-
-<Steps>
-  <Step title="Install">
-    Describe how to install your product or sign up.
-
-    ```bash
-    npm install your-package
-    ```
-  </Step>
-  <Step title="Configure">
-    Describe any setup or configuration needed before first use.
-
-    ```bash
-    your-cli init
-    ```
-  </Step>
-  <Step title="Run it">
-    Show the first thing a user does to see it working.
-
-    ```bash
-    your-cli start
-    ```
-  </Step>
-</Steps>
+Andá a [Configuración → Plataforma de agentes → API keys](https://www.oktopus.lat/app/configuracion) y generá una key tipo `secret` con scope `mcp:invoke` (sumá `orders:write`, `products:write`, `landings:write` según lo que necesite tu agente). El formato es `okto_live_secret_...`.
 
 <Tip>
-  Give people a way to get help. This could be a link to a support page, a chat with a customer support agent, or a forum for your product.
-
-  Example: Need help? Reach out to us at [support@yourcompany.com](mailto:support@yourcompany.com).
+Para probar sin tocar Dropi real, usá una key `test` (`okto_test_secret_...`).
 </Tip>
+
+## 2. Conectá tu cliente
+
+<Tabs>
+  <Tab title="Claude Code">
+    ```bash
+    claude mcp add --transport http oktopus \
+      https://www.oktopus.lat/api/mcp \
+      --header "Authorization: Bearer TU_API_KEY"
+    ```
+  </Tab>
+  <Tab title="Plugin de Claude Code">
+    ```bash
+    # Marketplace + plugin oficial (incluye skills)
+    claude plugin marketplace add hydrop-inc/oktopus-plugin
+    claude plugin install oktopus@oktopus
+    export OKTOPUS_API_KEY=okto_live_secret_...
+    ```
+    Trae las skills `montar-tienda-cod` y `conectar-mi-pagina`.
+  </Tab>
+  <Tab title="Cursor / otros">
+    Agregá un MCP server remoto con transporte **HTTP (Streamable)**:
+    ```json
+    {
+      "mcpServers": {
+        "oktopus": {
+          "url": "https://www.oktopus.lat/api/mcp",
+          "headers": { "Authorization": "Bearer TU_API_KEY" }
+        }
+      }
+    }
+    ```
+  </Tab>
+</Tabs>
+
+También podés conectar por **OAuth 2.1** (sin pegar keys): ver [OAuth](/mcp/oauth).
+
+## 3. Probalo
+
+Pedile a tu agente, por ejemplo:
+
+> "¿Cómo va el negocio este mes?"
+>
+> "Mostrame las órdenes de hoy y empujá las confirmadas a Dropi."
+>
+> "Creá una orden de pago contra entrega para Juan en Bogotá, producto X."
+
+El catálogo completo de herramientas está en [Tools](/mcp/tools).
